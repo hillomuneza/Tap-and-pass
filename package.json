@@ -4,11 +4,14 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0 --port 4173",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
     "server": "node server/index.js",
     "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "desktop": "electron .",
+    "desktop:dev": "concurrently \"npm run server\" \"npm run dev\"",
+    "dist": "npm run build && electron-builder",
     "test": "node --test server/tests/*.test.js",
     "test:watch": "node --test --watch server/tests/*.test.js"
   },
@@ -19,6 +22,8 @@
     "concurrently": "^8.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "electron": "^31.7.4",
+    "electron-builder": "^25.1.8",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "latest",
@@ -32,5 +37,22 @@
     "vite": "latest",
     "ws": "^8.21.3",
     "xlsx": "^0.18.5"
+  },
+  "main": "electron/main.js",
+  "build": {
+    "appId": "com.tapandpass.bordercheck",
+    "productName": "Tap & Pass",
+    "files": [
+      "dist/**/*",
+      "server/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    }
   }
 }
