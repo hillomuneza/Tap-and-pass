@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "traveler_id": "TP-2026-00012346",
+    "type": "secondary_inspection",
+    "severity": "warning",
+    "message": "Secondary inspection required for Jonas Mbeki",
+    "status": "open",
+    "created_at": "2026-09-18T09:08:17Z"
+  }
+]

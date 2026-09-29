@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Gatuna",
+    "border_name": "Rwanda-Uganda Border",
+    "country": "Rwanda",
+    "location": "Gatuna, Northern Province",
+    "device_id": "DEV-001",
+    "status": "OPEN"
+  },
+  {
+    "id": 2,
+    "name": "Cyanika",
+    "border_name": "Rwanda-Uganda Border",
+    "country": "Rwanda",
+    "location": "Cyanika, Northern Province",
+    "device_id": "DEV-002",
+    "status": "OPEN"
+  },
+  {
+    "id": 3,
+    "name": "Kagitumba",
+    "border_name": "Rwanda-Uganda Border",
+    "country": "Rwanda",
+    "location": "Kagitumba, Northern Province",
+    "device_id": "DEV-003",
+    "status": "OPEN"
+  },
+  {
+    "id": 4,
+    "name": "Mirama Hills",
+    "border_name": "Rwanda-Uganda Border",
+    "country": "Rwanda",
+    "location": "Mirama Hills, Northern Province",
+    "device_id": "DEV-004",
+    "status": "OPEN"
+  },
+  {
+    "id": 5,
+    "name": "Nyungwe",
+    "border_name": "Rwanda-Burundi Border",
+    "country": "Rwanda",
+    "location": "Nyungwe, Southern Province",
+    "device_id": "DEV-005",
+    "status": "OPEN"
+  },
+  {
+    "id": 6,
+    "name": "Ruzizi",
+    "border_name": "Rwanda-DRC Border",
+    "country": "Rwanda",
+    "location": "Ruzizi, Western Province",
+    "device_id": "DEV-006",
+    "status": "OPEN"
+  },
+  {
+    "id": 7,
+    "name": "Bukavu",
+    "border_name": "Rwanda-DRC Border",
+    "country": "Rwanda",
+    "location": "Bukavu, Western Province",
+    "device_id": "DEV-007",
+    "status": "OPEN"
+  },
+  {
+    "id": 8,
+    "name": "Goma",
+    "border_name": "Rwanda-DRC Border",
+    "country": "Rwanda",
+    "location": "Goma, Northern Province",
+    "device_id": "DEV-008",
+    "status": "OPEN"
+  },
+  {
+    "id": 9,
+    "name": "Ishasha",
+    "border_name": "Rwanda-DRC Border",
+    "country": "Rwanda",
+    "location": "Ishasha, Western Province",
+    "device_id": "DEV-009",
+    "status": "OPEN"
+  },
+  {
+    "id": 10,
+    "name": "Buta",
+    "border_name": "Rwanda-Burundi Border",
+    "country": "Rwanda",
+    "location": "Buta, Southern Province",
+    "device_id": "DEV-010",
+    "status": "OPEN"
+  },
+  {
+    "id": 11,
+    "name": "Mukumba",
+    "border_name": "Rwanda-Burundi Border",
+    "country": "Rwanda",
+    "location": "Mukumba, Southern Province",
+    "device_id": "DEV-011",
+    "status": "OPEN"
+  },
+  {
+    "id": 12,
+    "name": "Mahagi",
+    "border_name": "Rwanda-Uganda Border",
+    "country": "Rwanda",
+    "location": "Mahagi, Northern Province",
+    "device_id": "DEV-012",
+    "status": "OPEN"
+  }
+]

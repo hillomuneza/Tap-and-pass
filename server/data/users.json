@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "full_name": "System Administrator",
+    "username": "admin",
+    "email": "admin@tapandpass.local",
+    "password_hash": "$2a$10$rQ8Q8Q8Q8Q8Q8Q8Q8Q8Q8O",
+    "role_id": 1,
+    "department_id": 6,
+    "checkpoint_id": null,
+    "status": "active",
+    "last_login": "2026-09-29T04:50:16.637Z"
+  },
+  {
+    "id": 2,
+    "full_name": "Maya Kalu",
+    "username": "officer",
+    "email": "officer@tapandpass.local",
+    "password_hash": "$2a$10$rQ8Q8Q8Q8Q8Q8Q8Q8Q8Q8O",
+    "role_id": 3,
+    "department_id": 1,
+    "checkpoint_id": 3,
+    "status": "active",
+    "last_login": "2026-09-29T04:33:19.951Z"
+  },
+  {
+    "id": 3,
+    "full_name": "Samuel Obi",
+    "username": "supervisor",
+    "email": "supervisor@tapandpass.local",
+    "password_hash": "$2a$10$rQ8Q8Q8Q8Q8Q8Q8Q8Q8Q8O",
+    "role_id": 2,
+    "department_id": 1,
+    "checkpoint_id": null,
+    "status": "active",
+    "last_login": "2026-09-19T17:54:26.464Z"
+  },
+  {
+    "id": 4,
+    "full_name": "Fatima Bello",
+    "username": "customs",
+    "email": "customs@tapandpass.local",
+    "password_hash": "$2a$10$rQ8Q8Q8Q8Q8Q8Q8Q8Q8Q8O",
+    "role_id": 4,
+    "department_id": 2,
+    "checkpoint_id": 3,
+    "status": "active",
+    "last_login": null
+  },
+  {
+    "id": 5,
+    "username": "testuser",
+    "password_hash": "$2a$10$pTWXbXR1PUpG3vmQGOu3NuEnHydDo9o2XPAv3uJA4cKq.4oY6d7LW",
+    "full_name": "Test User",
+    "email": "test@test.com",
+    "role_id": 3,
+    "department_id": 1,
+    "checkpoint_id": null,
+    "status": "active",
+    "last_login": null
+  }
+]

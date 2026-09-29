@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Immigration",
+    "description": "Immigration control"
+  },
+  {
+    "id": 2,
+    "name": "Customs",
+    "description": "Customs and excise"
+  },
+  {
+    "id": 3,
+    "name": "Border Security",
+    "description": "Border security"
+  },
+  {
+    "id": 4,
+    "name": "Police",
+    "description": "Border police"
+  },
+  {
+    "id": 5,
+    "name": "Health",
+    "description": "Health and quarantine"
+  },
+  {
+    "id": 6,
+    "name": "Administration",
+    "description": "Administrative support"
+  }
+]

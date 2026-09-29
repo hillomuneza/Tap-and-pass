@@ -1,0 +1,8 @@
+{
+  "systemName": "TAP & PASS",
+  "checkerAccessKey": "1234",
+  "offlineMode": true,
+  "defaultLanguage": "rw",
+  "dataRetentionDays": 90,
+  "autoSync": true
+}

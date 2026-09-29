@@ -1,0 +1,122 @@
+[
+  {
+    "id": "DEV-001",
+    "device_name": "Reader GT-01",
+    "device_type": "NFC",
+    "serial_number": "SN-001",
+    "checkpoint_id": 1,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-002",
+    "device_name": "Reader CY-02",
+    "device_type": "NFC",
+    "serial_number": "SN-002",
+    "checkpoint_id": 2,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-003",
+    "device_name": "Reader KG-03",
+    "device_type": "NFC",
+    "serial_number": "SN-003",
+    "checkpoint_id": 3,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-004",
+    "device_name": "Reader MH-04",
+    "device_type": "NFC",
+    "serial_number": "SN-004",
+    "checkpoint_id": 4,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-005",
+    "device_name": "Reader NW-05",
+    "device_type": "NFC",
+    "serial_number": "SN-005",
+    "checkpoint_id": 5,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-006",
+    "device_name": "Reader RZ-06",
+    "device_type": "NFC",
+    "serial_number": "SN-006",
+    "checkpoint_id": 6,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-007",
+    "device_name": "Reader BK-07",
+    "device_type": "NFC",
+    "serial_number": "SN-007",
+    "checkpoint_id": 7,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-008",
+    "device_name": "Reader GM-08",
+    "device_type": "NFC",
+    "serial_number": "SN-008",
+    "checkpoint_id": 8,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-009",
+    "device_name": "Reader IH-09",
+    "device_type": "NFC",
+    "serial_number": "SN-009",
+    "checkpoint_id": 9,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-010",
+    "device_name": "Reader BT-10",
+    "device_type": "NFC",
+    "serial_number": "SN-010",
+    "checkpoint_id": 10,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-011",
+    "device_name": "Reader MK-11",
+    "device_type": "NFC",
+    "serial_number": "SN-011",
+    "checkpoint_id": 11,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  },
+  {
+    "id": "DEV-012",
+    "device_name": "Reader MH-12",
+    "device_type": "NFC",
+    "serial_number": "SN-012",
+    "checkpoint_id": 12,
+    "status": "online",
+    "last_seen": "2026-09-19T16:49:01.189Z",
+    "firmware_version": "1.2.0"
+  }
+]

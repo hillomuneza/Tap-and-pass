@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "administrator",
+    "description": "Full system access"
+  },
+  {
+    "id": 2,
+    "name": "supervisor",
+    "description": "Monitor and manage operations"
+  },
+  {
+    "id": 3,
+    "name": "officer",
+    "description": "Process border crossings"
+  },
+  {
+    "id": 4,
+    "name": "department_officer",
+    "description": "Department-specific access"
+  },
+  {
+    "id": 5,
+    "name": "traveler",
+    "description": "Traveler portal access"
+  }
+]
