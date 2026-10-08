@@ -1,0 +1,99 @@
+mutation SeedDatabase @transaction {
+  user_insertMany(data: [
+    {
+      id: "71e54911-37d4-47b2-841f-13a886365731",
+      email: "alice@example.com",
+      fullName: "Alice Smith",
+      role: "ADMIN"
+    },
+    {
+      id: "82e54911-37d4-47b2-841f-13a886365732",
+      email: "bob@example.com",
+      fullName: "Bob Jones",
+      role: "SECURITY_OFFICER"
+    },
+    {
+      id: "93e54911-37d4-47b2-841f-13a886365733",
+      email: "charlie@example.com",
+      fullName: "Charlie Brown",
+      role: "GUEST"
+    }
+  ])
+  entryPoint_insertMany(data: [
+    {
+      id: "a1e54911-37d4-47b2-841f-13a886365741",
+      name: "Main Lobby",
+      locationDescription: "Front entrance",
+      status: "OPEN",
+      securityLevel: 1
+    },
+    {
+      id: "b2e54911-37d4-47b2-841f-13a886365742",
+      name: "Server Room",
+      locationDescription: "Basement B1",
+      status: "LOCKED",
+      securityLevel: 5
+    },
+    {
+      id: "c3e54911-37d4-47b2-841f-13a886365743",
+      name: "R&D Lab",
+      locationDescription: "Floor 3",
+      status: "RESTRICTED",
+      securityLevel: 3
+    }
+  ])
+  permission_insertMany(data: [
+    {
+      userId: "71e54911-37d4-47b2-841f-13a886365731",
+      entryPointId: "a1e54911-37d4-47b2-841f-13a886365741",
+      accessLevel: 5
+    },
+    {
+      userId: "82e54911-37d4-47b2-841f-13a886365732",
+      entryPointId: "b2e54911-37d4-47b2-841f-13a886365742",
+      accessLevel: 5
+    },
+    {
+      userId: "93e54911-37d4-47b2-841f-13a886365733",
+      entryPointId: "a1e54911-37d4-47b2-841f-13a886365741",
+      accessLevel: 1
+    }
+  ])
+  accessLog_insertMany(data: [
+    {
+      userId: "71e54911-37d4-47b2-841f-13a886365731",
+      entryPointId: "a1e54911-37d4-47b2-841f-13a886365741",
+      status: "SUCCESS",
+      timestamp: "2023-10-27T10:00:00Z"
+    },
+    {
+      userId: "82e54911-37d4-47b2-841f-13a886365732",
+      entryPointId: "b2e54911-37d4-47b2-841f-13a886365742",
+      status: "SUCCESS",
+      timestamp: "2023-10-27T11:00:00Z"
+    },
+    {
+      userId: "93e54911-37d4-47b2-841f-13a886365733",
+      entryPointId: "c3e54911-37d4-47b2-841f-13a886365743",
+      status: "DENIED",
+      timestamp: "2023-10-27T12:00:00Z"
+    }
+  ])
+  credential_insertMany(data: [
+    {
+      userId: "71e54911-37d4-47b2-841f-13a886365731",
+      nfcTokenHash: "abc123hash",
+      lastUsedAt: "2023-10-27T10:00:00Z"
+    },
+    {
+      userId: "82e54911-37d4-47b2-841f-13a886365732",
+      nfcTokenHash: "def456hash",
+      lastUsedAt: "2023-10-27T11:00:00Z"
+    },
+    {
+      userId: "93e54911-37d4-47b2-841f-13a886365733",
+      nfcTokenHash: "ghi789hash",
+      lastUsedAt: "2023-10-27T12:00:00Z"
+    }
+  ])
+}

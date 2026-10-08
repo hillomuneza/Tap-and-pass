@@ -1,4 +1,4 @@
-const API_BASE = '/api'
+const API_BASE = import.meta.env.VITE_API_BASE || '/api'
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('tap_token')
@@ -8,7 +8,7 @@ async function request(path, options = {}) {
   try {
     res = await fetch(`${API_BASE}${path}`, { ...options, headers })
   } catch {
-    throw new Error('Unable to connect to the Tap & Pass server. Start the backend and try again.')
+    throw new Error('Unable to connect to the Tap & Pass server. You can continue in demo mode.')
   }
   if (res.status === 401) {
     localStorage.removeItem('tap_token')

@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import { Zap } from 'lucide-react'
 
 export default function Login({ onLoginSuccess }) {
-  const { login, loading } = useAuth()
+  const { login, loginDemo, loading } = useAuth()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -17,7 +17,22 @@ export default function Login({ onLoginSuccess }) {
         onLoginSuccess(user)
       }
     } catch (err) {
-      setError(err.message)
+      const msg = err?.message || ''
+      if (msg.includes('Unable to connect') || msg.includes('fetch')) {
+        setError('Backend is unreachable. Switching to demo mode...')
+        setTimeout(() => {
+          handleDemo()
+        }, 600)
+        return
+      }
+      setError(msg || 'Sign in failed')
+    }
+  }
+
+  const handleDemo = () => {
+    const user = loginDemo()
+    if (onLoginSuccess && user) {
+      onLoginSuccess(user)
     }
   }
 
@@ -59,6 +74,9 @@ export default function Login({ onLoginSuccess }) {
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
+        <button type="button" className="login-button login-button-secondary" onClick={handleDemo} disabled={loading}>
+          Continue in demo mode
+        </button>
       </div>
     </div>
   )

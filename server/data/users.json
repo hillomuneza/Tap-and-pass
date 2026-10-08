@@ -9,19 +9,7 @@
     "department_id": 6,
     "checkpoint_id": null,
     "status": "active",
-    "last_login": "2026-09-29T04:50:16.637Z"
-  },
-  {
-    "id": 2,
-    "full_name": "Maya Kalu",
-    "username": "officer",
-    "email": "officer@tapandpass.local",
-    "password_hash": "$2a$10$rQ8Q8Q8Q8Q8Q8Q8Q8Q8Q8O",
-    "role_id": 3,
-    "department_id": 1,
-    "checkpoint_id": 3,
-    "status": "active",
-    "last_login": "2026-09-29T04:33:19.951Z"
+    "last_login": "2026-10-08T05:03:38.348Z"
   },
   {
     "id": 3,
@@ -58,5 +46,17 @@
     "checkpoint_id": null,
     "status": "active",
     "last_login": null
+  },
+  {
+    "id": 6,
+    "username": "officer",
+    "password_hash": "$2a$10$ayJ3ENaR8eCvCmZQ9uOQt.9GGAd2wfBU0VSpo4RYhbK70Oi4mfXwC",
+    "full_name": "MUGISHA Mike",
+    "email": "mugishamike@gmail.com",
+    "role_id": 3,
+    "department_id": 1,
+    "checkpoint_id": null,
+    "status": "active",
+    "last_login": "2026-10-06T17:21:02.379Z"
   }
 ]

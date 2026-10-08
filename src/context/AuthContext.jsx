@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState } from 'react'
+import { api } from '../services/api'
 
 const AuthContext = createContext(null)
 
@@ -12,38 +13,35 @@ export function AuthProvider({ children }) {
   const login = async (username, password) => {
     setLoading(true)
     try {
-      let res
-      try {
-        res = await fetch('/api/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, password })
-        })
-      } catch {
-        throw new Error('Unable to connect to the Tap & Pass server. Start the backend and try again.')
-      }
-      const responseText = await res.text()
-      let data = {}
-      if (responseText) {
-        try {
-          data = JSON.parse(responseText)
-        } catch {
-          throw new Error(`Server returned an invalid response (${res.status})`)
-        }
-      }
-      if (!res.ok) throw new Error(data.error || 'Login failed')
-      setUser(data.user)
+      const data = await api.login({ username, password })
+      const loggedUser = data.user
+      setUser(loggedUser)
       localStorage.setItem('tap_token', data.token)
-      localStorage.setItem('tap_user', JSON.stringify(data.user))
-      return data.user
+      localStorage.setItem('tap_user', JSON.stringify(loggedUser))
+      return loggedUser
     } finally {
       setLoading(false)
     }
   }
 
+  const loginDemo = () => {
+    const demoUser = {
+      id: 'demo',
+      full_name: 'Demo User',
+      username: 'demo',
+      email: 'demo@tapandpass.local',
+      role: 1,
+      department_id: 6,
+      checkpoint_id: null
+    }
+    setUser(demoUser)
+    localStorage.setItem('tap_user', JSON.stringify(demoUser))
+    return demoUser
+  }
+
   const logout = async () => {
     try {
-      await fetch('/api/auth/logout', { method: 'POST', headers: { Authorization: `Bearer ${localStorage.getItem('tap_token')}` } })
+      await api.logout()
     } catch {}
     setUser(null)
     localStorage.removeItem('tap_token')
@@ -51,7 +49,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading, setUser }}>
+    <AuthContext.Provider value={{ user, login, loginDemo, logout, loading, setUser }}>
       {children}
     </AuthContext.Provider>
   )

@@ -1,0 +1,33 @@
+type User @table {
+  email: String!
+  fullName: String!
+  role: String!
+  phoneNumber: String
+  profileImageUrl: String
+}
+
+type EntryPoint @table {
+  name: String!
+  locationDescription: String!
+  status: String!
+  securityLevel: Int
+}
+
+type Permission @table {
+  user: User!
+  entryPoint: EntryPoint!
+  accessLevel: Int!
+}
+
+type AccessLog @table {
+  user: User!
+  entryPoint: EntryPoint!
+  timestamp: Timestamp!
+  status: String!
+}
+
+type Credential @table {
+  user: User!
+  nfcTokenHash: String!
+  lastUsedAt: Timestamp!
+}

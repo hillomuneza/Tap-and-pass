@@ -1,0 +1,130 @@
+mutation CreateUser($email: String!, $fullName: String!, $role: String!) @auth(level: USER) {
+  user_insert(data: {id_expr: "auth.uid", email: $email, fullName: $fullName, role: $role})
+}
+
+mutation UpdateCurrentUser($fullName: String, $phoneNumber: String) @auth(level: USER) {
+  user_update(key: {id_expr: "auth.uid"}, data: {fullName: $fullName, phoneNumber: $phoneNumber})
+}
+
+mutation DeleteCurrentUser @auth(level: USER) {
+  user_delete(key: {id_expr: "auth.uid"})
+}
+
+query GetCurrentUser @auth(level: USER) {
+  user(key: {id_expr: "auth.uid"}) {
+    email
+    fullName
+    role
+  }
+}
+
+query ListUsers @auth(level: USER) {
+  users {
+    fullName
+    role
+  }
+}
+
+mutation CreateEntryPoint($name: String!, $locationDescription: String!, $status: String!) @auth(level: USER) {
+  entryPoint_insert(data: {name: $name, locationDescription: $locationDescription, status: $status})
+}
+
+mutation UpdateEntryPoint($id: UUID!, $status: String) @auth(level: USER) {
+  entryPoint_update(id: $id, data: {status: $status})
+}
+
+mutation DeleteEntryPoint($id: UUID!) @auth(level: USER) {
+  entryPoint_delete(id: $id)
+}
+
+query GetEntryPoint($id: UUID!) @auth(level: PUBLIC, insecureReason: "Publicly accessible entry point information") {
+  entryPoint(id: $id) {
+    name
+    locationDescription
+    status
+  }
+}
+
+query ListEntryPoints @auth(level: PUBLIC, insecureReason: "Publicly accessible entry point list") {
+  entryPoints {
+    name
+    status
+  }
+}
+
+mutation CreatePermission($userId: UUID!, $entryPointId: UUID!, $accessLevel: Int!) @auth(level: USER) {
+  permission_insert(data: {userId: $userId, entryPointId: $entryPointId, accessLevel: $accessLevel})
+}
+
+mutation UpdatePermission($id: UUID!, $accessLevel: Int!) @auth(level: USER) {
+  permission_update(id: $id, data: {accessLevel: $accessLevel})
+}
+
+mutation DeletePermission($id: UUID!) @auth(level: USER) {
+  permission_delete(id: $id)
+}
+
+query GetPermission($id: UUID!) @auth(level: USER) {
+  permission(id: $id) {
+    user { fullName }
+    entryPoint { name }
+    accessLevel
+  }
+}
+
+query ListPermissions @auth(level: USER) {
+  permissions {
+    accessLevel
+    entryPoint { name }
+  }
+}
+
+mutation CreateAccessLog($entryPointId: UUID!, $status: String!) @auth(level: USER) {
+  accessLog_insert(data: {userId_expr: "auth.uid", entryPointId: $entryPointId, status: $status, timestamp_expr: "request.time"})
+}
+
+mutation DeleteAccessLog($id: UUID!) @auth(level: USER) {
+  accessLog_delete(id: $id)
+}
+
+query GetAccessLog($id: UUID!) @auth(level: USER) {
+  accessLog(id: $id) {
+    status
+    timestamp
+    entryPoint { name }
+  }
+}
+
+query ListMyAccessLogs @auth(level: USER) {
+  accessLogs(where: {userId: {eq_expr: "auth.uid"}}) {
+    timestamp
+    status
+    entryPoint { name }
+  }
+}
+
+mutation CreateCredential($nfcTokenHash: String!) @auth(level: USER) {
+  credential_insert(data: {userId_expr: "auth.uid", nfcTokenHash: $nfcTokenHash, lastUsedAt_expr: "request.time"})
+}
+
+mutation UpdateCredential($id: UUID!, $nfcTokenHash: String!) @auth(level: USER) {
+  credential_update(id: $id, data: {nfcTokenHash: $nfcTokenHash, lastUsedAt_expr: "request.time"})
+}
+
+mutation DeleteCredential($id: UUID!) @auth(level: USER) {
+  credential_delete(id: $id)
+}
+
+query GetMyCredential @auth(level: USER) {
+  credentials(where: {userId: {eq_expr: "auth.uid"}}) {
+    nfcTokenHash
+    lastUsedAt
+  }
+}
+
+query ListCredentials @auth(level: USER) {
+  credentials {
+    user { fullName }
+    lastUsedAt
+  }
+}

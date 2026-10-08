@@ -1,7 +1,7 @@
 import { describe, it, before, after } from 'node:test'
 import assert from 'node:assert'
 
-const API_BASE = 'http://localhost:4000/api'
+const API_BASE = 'http://localhost:5000/api'
 let authToken = ''
 
 async function request(path, options = {}) {

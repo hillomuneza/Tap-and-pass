@@ -11,9 +11,11 @@ let mainWindow
 let backendProcess
 
 function startBackend() {
+  if (backendProcess) return
+
   backendProcess = spawn(process.execPath, ['server/index.js'], {
     cwd: rootDir,
-    env: { ...process.env, PORT: '5000' },
+    env: { ...process.env, PORT: '5000', NODE_ENV: 'production', DIST_BUILD: 'true' },
     stdio: 'inherit'
   })
 
@@ -26,19 +28,33 @@ function startBackend() {
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1400,
+    width: 1440,
     height: 980,
     minWidth: 1100,
     minHeight: 760,
+    show: false,
     title: 'Tap & Pass Border Operations',
     backgroundColor: '#092b34',
+    autoHideMenuBar: true,
+    fullscreen: true,
+    fullscreenable: true,
+    kiosk: true,
     webPreferences: {
       contextIsolation: true,
-      nodeIntegration: false
+      nodeIntegration: false,
+      devTools: false
     }
   })
 
-  mainWindow.loadURL('http://localhost:4173')
+  mainWindow.setMenuBarVisibility(false)
+  mainWindow.loadURL('http://localhost:5000')
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+    mainWindow.maximize()
+  })
+
+  mainWindow.webContents.setWindowOpenHandler(() => ({ action: 'deny' }))
 
   mainWindow.on('closed', () => {
     mainWindow = null
